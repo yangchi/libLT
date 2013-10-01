@@ -23,7 +23,7 @@
 #define MMX_FLAG  0x00800000
 #define SSE2_FLAG 0x04000000
 
-//#define non_x86
+#define non_x86
 
 XorType isSIMD(void) {
 

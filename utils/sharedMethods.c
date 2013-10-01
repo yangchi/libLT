@@ -443,6 +443,7 @@ unsigned int rand2window(Configuration *conf, unsigned int offset, double symb) 
 }
 
 // Read the computer's timer RDTSC
+/*
 inline unsigned long long getTime(void) {
     unsigned long lo, hi;
     unsigned long long output;
@@ -457,7 +458,7 @@ inline unsigned long long getTime(void) {
     output = (unsigned long long) hi << 32 | lo;
     return output;
 }
-
+*/
 
 
 // ===========================================================================

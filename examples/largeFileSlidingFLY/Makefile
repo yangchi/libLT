@@ -22,7 +22,7 @@ MATHLIB=m
 LIBNAME=LT
 LIBPATH=../../
 
-CFLAGS=-I$(LIBPATH) -O3 -L$(LIBPATH) -funroll-loops -Wall -mmmx -msse2
+CFLAGS=-I$(LIBPATH) -O3 -L$(LIBPATH) -funroll-loops -Wall 
 
 SRCS=largeFileSlidingFLY.c
 OBJS=$(SRCS:.c=.o)

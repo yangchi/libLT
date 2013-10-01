@@ -20,7 +20,7 @@ MATHLIB=m
 LIBNAME=LT
 LIBPATH=../../
 
-CFLAGS=-I$(LIBPATH) -O3 -g -L$(LIBPATH) -funroll-loops -Wall -mmmx -msse2
+CFLAGS=-I$(LIBPATH) -O3 -g -L$(LIBPATH) -funroll-loops -Wall 
 
 SRCS=explicitFLY.c
 OBJS=$(SRCS:.c=.o)

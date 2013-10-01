@@ -66,7 +66,7 @@ double create_headers(Mgenerator *matrix);
 // be generated as the function above
 double create_headers_nw(Mgenerator *matrix, unsigned int nw, unsigned int Ns);
 
-inline unsigned long long getTime(void);
+//inline unsigned long long getTime(void);
 
 // Window
 void chooseAllInWindow(Configuration *conf, unsigned int offset, unsigned int* vect, unsigned int deg);
