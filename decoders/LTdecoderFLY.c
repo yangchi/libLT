@@ -329,8 +329,14 @@ void decodingProcessFLY(LTdecoderFLY* decoder) {
         exit(EXIT_FAILURE);
     }
 
+	Tbool first = True;
+
     while ((decoder->RXsymbList != NULL)&&(one_decoded == True)) {
         one_decoded = processReceivedFLY(decoder);
+		if(first){
+			printf("The first one is decoded!!\n");
+			first = False;
+		}
     }
 
     return;
