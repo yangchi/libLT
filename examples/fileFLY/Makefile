@@ -21,6 +21,7 @@ LIBNAME=LT
 LIBPATH=../../
 
 CFLAGS=-I$(LIBPATH) -O3 -g -L$(LIBPATH) -funroll-loops -Wall 
+LDADD=-lrt
 
 SRCS=fileFLY.c
 OBJS=$(SRCS:.c=.o)
@@ -30,7 +31,7 @@ all: $(SRCS) $(EXE)
 	rm -f $(OBJS)
 
 $(EXE): $(OBJS)
-	$(CC) $(CFLAGS) $(OBJS) -l$(LIBNAME) -l$(MATHLIB) -o $@
+	$(CC) $(CFLAGS) $(OBJS) -l$(LIBNAME) -l$(MATHLIB) -o $@ $(LDADD)
 
 .cpp.o:
 	$(CC) $(CFLAGS) -c $< -o $@
