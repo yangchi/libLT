@@ -20,6 +20,7 @@
 #CFLAGS=-DDEBUGprintRealeasedSymbol -msse2 -mmmx -Wall -funroll-loops # In python crash
 CFLAGS= -g -o3 -funroll-loops -Wall -Wstrict-aliasing -msse2 -mmmx 
 #CFLAGS=-O3 -funroll-loops -msse2 -mmmx
+LDADD=-lrt
 
 SRCS= $(wildcard */*.c)
 
@@ -39,7 +40,7 @@ $(LIBNAME): $(OBJS)
 	ranlib $@
 	
 .cpp.o:
-	$(CC) $(CFLAGS) -c $< -o $@ 
+	$(CC) $(CFLAGS) -c $< -o $@  $(LDADD)
 
 clean: 
 	rm -f $(OBJS)

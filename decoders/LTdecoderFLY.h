@@ -43,6 +43,8 @@
 #include "../list/node.h"
 #include "../xor/xor.h"
 
+#include <time.h>
+
 #define noDEBUGprintReleasedSymbol
 #define noDEBUGdecoderPrintHeaders
 #define noDEBUGdecoderPrintBucketRandomSeed
@@ -88,7 +90,7 @@ void freeDecoderFLY(LTdecoderFLY *decoder);
 // Reset the number of received/decoded symbols and the decoded buffer
 void resetDecoderFLY(LTdecoderFLY *decoder);
 
-void decodingProcessFLY(LTdecoderFLY *decoder);
+struct timespec decodingProcessFLY(LTdecoderFLY *decoder);
 
 char *getDecodedInformation(LTdecoderFLY *decoder);
 

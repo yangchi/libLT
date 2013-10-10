@@ -40,6 +40,8 @@
 #include "../utils/utilMem.h"
 #include "../utils/utilErr.h"
 
+#include <time.h>
+
 // =======================================================================
 //					LTdecoderFLY
 // =======================================================================
@@ -320,9 +322,10 @@ Tbool processReceivedFLY(LTdecoderFLY* decoder) {
     return one_decoded;
 }
 
-void decodingProcessFLY(LTdecoderFLY* decoder) {
+struct timespec decodingProcessFLY(LTdecoderFLY* decoder) {
 
     Tbool one_decoded = True;
+	struct timespec tp;
 
     if (decoder == NULL) {
         print_error("ERROR: decodingProcessFLY - No decoder!\n");
@@ -335,11 +338,15 @@ void decodingProcessFLY(LTdecoderFLY* decoder) {
         one_decoded = processReceivedFLY(decoder);
 		if(first){
 			printf("The first one is decoded!!\n");
+			if(clock_gettime(CLOCK_PROCESS_CPUTIME_ID, &tp) != 0)
+				printf("clock_gettime failed.\n");
+			else
+				printf("The current seconds: %lld and current nanosecs: %ld\n", (long long)tp.tv_sec, tp.tv_nsec);
 			first = False;
 		}
     }
 
-    return;
+    return tp;
 }
 
 
