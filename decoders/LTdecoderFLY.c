@@ -338,7 +338,7 @@ struct timespec decodingProcessFLY(LTdecoderFLY* decoder) {
         one_decoded = processReceivedFLY(decoder);
 		if(first){
 			printf("The first one is decoded!!\n");
-			if(clock_gettime(CLOCK_PROCESS_CPUTIME_ID, &tp) != 0)
+			if(clock_gettime(CLOCK_MONOTONIC_RAW, &tp) != 0)
 				printf("clock_gettime failed.\n");
 			else
 				printf("The current seconds: %lld and current nanosecs: %ld\n", (long long)tp.tv_sec, tp.tv_nsec);
